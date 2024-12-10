@@ -3,21 +3,25 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 
-function Home() {
+function UserHome() {
   return (
     <div className="bg-rose-200 min-h-screen">
       <header className="bg-rose-900 shadow-md">
         <div className="container mx-auto py-4 px-6 flex justify-between items-center">
           {/* Replace the text with the logo image */}
-          <img 
-            src="/images/whiterose.png" 
+          <Image 
+            src="/images/png.png" 
             alt="Your Flower Shop Logo" 
-            className="h-10"  // Adjust height as needed
+            width={160}    // Increased size
+            height={40}    // Maintaining aspect ratio
+            className="h-14"  // Adjust height as needed
           />
           <nav className="hidden md:flex space-x-4">
-            <Link href="/components/molecules/Home" className="text-gray-300 hover:text-blue-500">Home</Link>
-            <Link href="/components/molecules/LandingContact" className="text-gray-300 hover:text-blue-500">Contact</Link>
-            <Link href="/components/molecules/LandingLogin" className="text-gray-300 hover:text-blue-500">Login</Link>
+            <Link href="/components/molecules/UserHome" className="text-gray-300 hover:text-blue-500">Home</Link>
+            <Link href="/components/molecules/shop" className="text-gray-300 hover:text-blue-500">Shop</Link>
+            <Link href="/components/molecules/Contact" className="text-gray-300 hover:text-blue-500">Contact</Link>
+            <Link href="/components/molecules/MyOrders" className="text-gray-300 hover:text-blue-500">My Order</Link>
+            <Link href="/components/molecules/Home" className="text-gray-300 hover:text-blue-500">Log Out</Link>
 
           </nav>
         </div>
@@ -37,8 +41,8 @@ function Home() {
           and discover how a touch of nature can bring joy to your day!
         </p>
         <p className="text-pink-500 text-lg mb-8">Discover the beauty of nature, one bloom at a time!</p>
-        <Link href="/components/molecules/LandingLogin">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login Now</button>
+        <Link href="/components/molecules/shop">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop Now</button>
         </Link>
 
         <section className="mt-16 text-gray-700">
@@ -106,4 +110,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default UserHome;

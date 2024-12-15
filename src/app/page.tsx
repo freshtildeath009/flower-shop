@@ -9,10 +9,12 @@ function Home() {
       <header className="bg-rose-900 shadow-md">
         <div className="container mx-auto py-4 px-6 flex justify-between items-center">
           {/* Replace the text with the logo image */}
-          <img 
-            src="/images/whiterose.png" 
-            alt="Your Flower Shop Logo" 
-            className="h-10"  // Adjust height as needed
+          <Image 
+                      src="/images/png.png" 
+                      alt="Your Flower Shop Logo" 
+                      width={160}    // Increased size
+                      height={40}    // Maintaining aspect ratio
+                      className="h-14"  // Adjust height as needed
           />
           <nav className="hidden md:flex space-x-4">
             <Link href="/components/molecules/Home" className="text-gray-300 hover:text-blue-500">Home</Link>

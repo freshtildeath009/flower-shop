@@ -11,7 +11,8 @@
                     <hr class="mb-5">
                     <p><a href="{{ route('admin/products') }}" class="p-2 bg-blue-700 w-fit rounded text-gray-100">Go
                             Back</a></p>
-                    <form action="" method="POST" enctype="multipart/form-data" class="my-4">
+                    <form action="{{ route('admin/products/save') }}" method="POST" enctype="multipart/form-data"
+                        class="my-4">
                         @csrf
                         <div class="row mb-3">
                             <div class="col">

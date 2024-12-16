@@ -13,6 +13,7 @@
                     <p class="p-2 bg-blue-700 w-fit rounded text-gray-100"><a href="products"
                             class="btn btn-primary">Products</a></p>
                 </div>
+
             </div>
         </div>
     </div>

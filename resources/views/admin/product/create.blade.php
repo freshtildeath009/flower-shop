@@ -27,12 +27,18 @@
                             <div class="col">
                                 <input class="w-full rounded-lg" type="text" name="description" id="description"
                                     class="form-control" placeholder="Description">
+                                @error('description')
+                                    <span class="p-3 bg-red-400 text-white">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <input class="w-full rounded-lg" type="text" name="price" id="price"
                                     class="form-control" placeholder="Price">
+                                @error('price')
+                                    <span class="p-3 bg-red-400 text-white">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="row">

@@ -10,8 +10,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
-                    <p class="p-2 bg-blue-700 w-fit rounded text-gray-100"><a href="products"
-                            class="btn btn-primary">Products</a></p>
+                    <p
+                        style="padding: 1rem; background-color: blue; width: fit-content; border-radius: 1rem; color:white;">
+                        <a href="products" class="btn">Products</a>
+                    </p>
                 </div>
 
             </div>

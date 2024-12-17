@@ -34,6 +34,7 @@ class ProductController extends Controller
             'title' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'image' => "required",
         ]);
         $data = Product::create($validation);
         if ($data) {
@@ -67,10 +68,12 @@ class ProductController extends Controller
         $title = $request->title;
         $description = $request->description;
         $price = $request->price;
+        $image = $request->image;
  
         $products->title = $title;
         $products->description = $description;
         $products->price = $price;
+        $products->image = $image;
         $data = $products->save();
         if ($data) {
             session()->flash('success', 'Product Update Successfully');

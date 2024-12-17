@@ -12,44 +12,51 @@
                     <div class="flex items-center justify-between mb-4">
                         <h1 class="text-2xl font-semibold">List of Products</h1>
                         <a href="{{ route('admin/products/create') }}"
-                            class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                            style="padding: 1rem; background-color: blue; width: fit-content; border-radius: 1rem; color:white;">
                             Add Product
                         </a>
                     </div>
                     <hr class="mb-4">
 
                     @if (Session::has('success'))
-                        <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                        <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg"
+                            style="background-color: lightgreen; ">
                             {{ Session::get('success') }}
                         </div>
                     @endif
 
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse border border-gray-300">
-                            <thead class="bg-gray-200">
+                        <table
+                            style="width: 100%; text-align: left; border-collapse: collapse; border: 1px solid #ccc;">
+                            <thead style="background-color: #f5f5f5;">
                                 <tr>
-                                    <th class="border border-gray-300 px-4 py-2">#</th>
-                                    <th class="border border-gray-300 px-4 py-2">Title</th>
-                                    <th class="border border-gray-300 px-4 py-2">Category</th>
-                                    <th class="border border-gray-300 px-4 py-2">Price</th>
-                                    <th class="border border-gray-300 px-4 py-2">Action</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px;">#</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px;">Title</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px;">Category</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px;">Price</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px; width: 20px;">Image Url</th>
+                                    <th style="border: 1px solid #ccc; padding: 8px;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($products as $product)
-                                    <tr class="{{ $loop->even ? 'bg-gray-50' : '' }}">
-                                        <td class="border border-gray-300 px-4 py-2">{{ $loop->iteration }}</td>
-                                        <td class="border border-gray-300 px-4 py-2">{{ $product->title }}</td>
-                                        <td class="border border-gray-300 px-4 py-2">{{ $product->description }}</td>
-                                        <td class="border border-gray-300 px-4 py-2">{{ $product->price }}</td>
-                                        <td class="border border-gray-300 px-4 py-2">
-                                            <div class="flex space-x-2">
+                                    <tr style="{{ $loop->even ? 'background-color: #f9f9f9;' : '' }}">
+                                        <td style="border: 1px solid #ccc; padding: 8px;">{{ $loop->iteration }}</td>
+                                        <td style="border: 1px solid #ccc; padding: 8px;">{{ $product->title }}</td>
+                                        <td style="border: 1px solid #ccc; padding: 8px;">{{ $product->description }}
+                                        </td>
+                                        <td style="border: 1px solid #ccc; padding: 8px;">{{ $product->price }}</td>
+                                        <td style="border: 1px solid #ccc; padding: 8px; text-overflow: ellipsis;">
+                                            {{ $product->image }}
+                                        </td>
+                                        <td style="border: 1px solid #ccc; padding: 8px;">
+                                            <div style="display: flex; gap: 8px;">
                                                 <a href="{{ route('admin/products/edit', ['id' => $product->id]) }}"
-                                                    class="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">
+                                                    style="color: white; background-color: green; padding: 8px 16px; text-decoration: none; border-radius: 5px;">
                                                     Edit
                                                 </a>
                                                 <a href="{{ route('admin/products/delete', ['id' => $product->id]) }}"
-                                                    class="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                                                    style="color: white; background-color: red; padding: 8px 16px; text-decoration: none; border-radius: 5px;">
                                                     Delete
                                                 </a>
                                             </div>
@@ -57,13 +64,15 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td class="text-center border border-gray-300 px-4 py-2" colspan="5">
+                                        <td style="text-align: center; border: 1px solid #ccc; padding: 8px;"
+                                            colspan="6">
                                             Product not found
                                         </td>
                                     </tr>
                                 @endforelse
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
